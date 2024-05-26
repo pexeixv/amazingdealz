@@ -1,0 +1,65 @@
+---
+const benefits = [
+  {
+    title: "Exclusive Access to Top Deals",
+    description:
+      "Get access to deals you won't find anywhere else, carefully selected and verified by our team.",
+  },
+  {
+    title: "Real-Time Notifications",
+    description:
+      "Be the first to know about the latest discounts and offers with instant updates straight to your phone.",
+  },
+  {
+    title: "Curated Deals from Trusted Sites",
+    description:
+      "Enjoy peace of mind with deals sourced from reputable and leading e-commerce platforms.",
+  },
+  {
+    title: "Save Time and Money",
+    description:
+      "Stop spending hours searching for deals. Let us bring the best offers directly to you, helping you save both time and money.",
+  },
+];
+---
+
+<div
+  class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+>
+  <div class="flex flex-col lg:flex-row">
+    <div class="max-w-xl pr-16 mx-auto mb-10">
+      <h2 class="mb-6 text-3xl font-extrabold leading-none">
+        Why Join Amazing Dealz?
+      </h2>
+      <p class="mb-6 text-gray-900">
+        Discover the benefits of joining Amazing Dealz and start saving on your
+        favorite products today!
+      </p>
+    </div>
+    <div class="grid gap-5 row-gap-5 sm:grid-cols-2">
+      {
+        benefits.map((b) => (
+          <div class="max-w-md">
+            <div class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
+              <svg
+                class="w-12 h-12 text-deep-purple-accent-400"
+                stroke="currentColor"
+                viewBox="0 0 52 52"
+              >
+                <polygon
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                  points="29 13 14 29 25 29 23 39 38 23 27 23"
+                />
+              </svg>
+            </div>
+            <h6 class="mb-2 font-semibold leading-5">{b.title}</h6>
+            <p class="text-sm text-gray-700">{b.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

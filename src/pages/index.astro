@@ -1,16 +1,19 @@
 ---
-
+import BaseLayout from "../components/BaseLayout.astro";
+import Hero from "../sections/Hero.astro";
+import FeaturedDeals from "../sections/FeaturedDeals.astro";
+import Benefits from "../sections/Benefits.astro";
+import Steps from "../sections/Steps.astro";
+// import FAQ from "../sections/FAQ.astro";
+import FAQ from "../sections/FAQ.jsx";
+import Stats from "../sections/Stats.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Hero />
+  <FeaturedDeals />
+  <Benefits />
+  <Steps />
+  <FAQ client:idle />
+  <Stats />
+</BaseLayout>
