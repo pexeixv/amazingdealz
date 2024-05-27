@@ -12,8 +12,8 @@ export const HeroParallax = ({
   products,
 }: {
   products: {
-    title: string;
-    link: string;
+    title?: string;
+    link?: string;
     thumbnail: string;
   }[];
 }) => {
@@ -139,8 +139,8 @@ export const ProductCard = ({
   translate,
 }: {
   product: {
-    title: string;
-    link: string;
+    title?: string;
+    link?: string;
     thumbnail: string;
   };
   translate: MotionValue<number>;
