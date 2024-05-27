@@ -7,8 +7,6 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
-// import Image from "next/image";
-// import Link from "next/link";
 
 export const HeroParallax = ({
   products,
@@ -43,7 +41,7 @@ export const HeroParallax = ({
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.1, 1]),
     springConfig
   );
   const rotateZ = useSpring(
@@ -57,7 +55,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] "
     >
       <Header />
       <motion.div
@@ -103,16 +101,36 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p>
-    </div>
+    <section className="z-20">
+      <div className="mb-16 lg:my-40 lg:pr-5 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="max-w-xl">
+          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+            super saver
+          </p>
+          <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none">
+            Unbelievable Deals <br className="hidden md:block" />
+            at Your{" "}
+            <span className="inline-block text-deep-purple-accent-400">
+              Fingertips
+            </span>
+          </h2>
+          <p className="pr-5 mb-5 text-base text-black md:text-lg">
+            Get the best deals and discounts on top e-commerce sites, delivered
+            straight to you. Join our Telegram channel for real-time
+            notifications and never miss out on amazing savings.
+          </p>
+          <div className="flex items-center">
+            <a
+              href="/"
+              className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none gap-2"
+            >
+              <i className="fab fa-telegram"></i>
+              Join Channel
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -147,8 +165,8 @@ export const ProductCard = ({
           alt={product.title}
         />
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0  bg-black pointer-events-none"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0  text-white">
         {product.title}
       </h2>
     </motion.div>
